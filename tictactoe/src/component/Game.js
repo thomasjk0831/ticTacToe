@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Board from './Board'
-import { getAllByAltText } from '@testing-library/react'
 
 export default function(){
     //array containing values in the game board
@@ -30,12 +29,32 @@ export default function(){
     }, [gameBoard])
 
     function clickHandler(i){
-        console.log(i)
+        const tempBoard = [...gameBoard]
+        if(winner || tempBoard[i] )
+        return
+
+        oIsNext? tempBoard[i]="O": tempBoard[i]="X"
+        setGameBoard(tempBoard)
+        setOIsNext(!oIsNext)
+    }
+
+    function gameStarter(){
+        setGameBoard(Array(9).fill(null))
+        setWinner(null)
+        setOIsNext(true)
     }
 
     return (
-        <div>
+        <>
             <Board gameBoard={gameBoard} clickHandler={clickHandler} />
-        </div>
+            {
+                winner? <p>The Winner is {winner}</p>: null
+            }
+            <div className="starter">
+            <button  onClick={gameStarter}>Start Game</button>
+              
+            </div>
+
+        </>
     )
 }

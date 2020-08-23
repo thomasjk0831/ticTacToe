@@ -1,5 +1,32 @@
 *{
-  border: 1px solid grey;
   margin: 0;
   padding : 0
 }
+
+h1{
+  text-align: center; 
+  margin: 10px 10px;
+
+}
+
+.starter {
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px;
+  padding: 10px;
+}
+
+.starter button {
+  padding: 10px;
+}
+
+p{
+  text-align: center;
+  margin: 5px 5px;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+  
+ 
