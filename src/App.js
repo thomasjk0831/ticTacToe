@@ -5,9 +5,12 @@ import './App.css';
 
 function App() {
   return (
-    <div >
-      <h1>Tic Tac Toe</h1>
-     <Game />
+    <div className = "main-container">
+     <div className="board">
+        <h1>Tic Tac Toe</h1>
+        <Game />
+     </div>
+      
     </div>
   );
 }
